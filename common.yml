@@ -2148,6 +2148,19 @@ buildvariants:
       - name: "push"
         run_on: rhel80-small
 
+  - name: amazon2022
+    display_name: Amazon Linux 64 2022
+    run_on:
+      - amazon2022-RC-small
+    tasks:
+      - name: "unit"
+      - name: ".kerberos"
+      - name: "dist"
+      - name: "sign"
+        run_on: rhel80-small
+      - name: "push"
+        run_on: rhel80-small
+
   #######################################
   #     Debian x86_64 Buildvariants     #
   #######################################
@@ -2968,6 +2981,20 @@ buildvariants:
       - name: ".5.3"
       - name: ".6.0"
       - name: ".latest"
+      - name: ".kerberos"
+      - name: "dist"
+      - name: "sign"
+        run_on: rhel80-small
+      - name: "push"
+        run_on: rhel80-small
+
+  - name: amazon2022-aarch64
+    display_name: Amazon Linux ARM 2022
+    run_on:
+      - amazon2022-RC-arm64-small
+    stepback: false
+    tasks:
+      - name: "unit"
       - name: ".kerberos"
       - name: "dist"
       - name: "sign"
